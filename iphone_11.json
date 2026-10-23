@@ -6,6 +6,27 @@
       {"tag": "foreign", "address": "https://8.8.8.8/dns-query", "detour": "GLOBAL"}
     ],
     "rules": [
+      {
+        "domain_suffix": [
+          "jddebug.com",
+          "mintegral.net",
+          "rayjump.com",
+          "duokanbox.com",
+          "://mi.com",
+          "://xiaomi.com",
+          "resolver.msg.xiaomi.net"
+        ],
+        "action": "reject"
+      },
+      {
+        "domain_suffix": [
+          ".lan",
+          ".local",
+          ".invalid",
+          "application.lan"
+        ],
+        "server": "local"
+      },    
       {"query_type": "HTTPS", "action": "reject"},
       {"outbound": "any", "action": "route", "server": "local", "disable_cache": true},
       {"rule_set": "geosite-cn", "action": "route", "server": "local"}
